@@ -38,12 +38,12 @@ public class QuotationRepository {
         }
 
         var realQuotation = new Quotation(
-            coinTable.get("790"),
+            coinTable.get(Coin.REAL_CODE),
             LocalDate.parse(dateStr, DateTimeFormatter.ofPattern("yyyyMMdd")),
-            1, 1, result.get("220").getBuyRate(), result.get("220").getSellRate()
+            1, 1, result.get(Coin.DOLLAR_CODE).getBuyRate(), result.get(Coin.DOLLAR_CODE).getSellRate()
         );
 
-        result.put("790", realQuotation);
+        result.put(Coin.REAL_CODE, realQuotation);
 
 
         return result;
